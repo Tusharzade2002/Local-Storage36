@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 200px;
+            width: 300px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            margin-top: 180px;
+        }
+        .btn-container{
+            display: flex;
+        }
+        .btn-container button{
+            margin: 0px 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
-    <button  id="save-btn"  onclick="Savebtn()">Save</button>
-    <button id="logout-btn" onclick="Logoutbutn()" >Log out</button>
-    <h2 id="gretting">Hello User</h2>
+    <div class="container">
+         <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
+         <div class="btn-container">
+           <button  id="save-btn"  onclick="Savebtn()">Save</button>
+           <button id="logout-btn" onclick="Logoutbutn()" >Log out</button>
+        </div>
+         <h2 id="gretting">Hello User</h2>
+    </div>
+
     <script>
         const InputElement=document.getElementById("Input-text");
         const OutputGreting = document.getElementById("gretting");
