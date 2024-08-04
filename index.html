@@ -8,12 +8,13 @@
 <body>
     <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
     <button  id="save-btn"  onclick="Savebtn()">Save</button>
-    <button onclick="Logoutbtn()" >Logn out</button>
+    <button id="logout-btn" onclick="Logoutbutn()" >Log out</button>
     <h2 id="gretting">Hello User</h2>
     <script>
-        const InputElement=document.getElementById("Input-text")
+        const InputElement=document.getElementById("Input-text");
         const OutputGreting = document.getElementById("gretting");
-        const Savebutn =document.getElementById("save-btn")
+        const Savebutn =document.getElementById("save-btn");
+        const Logoutbtn =document.getElementById("logout-btn");
            function Savebtn(){
 
                 let UserName = InputElement.value;
@@ -23,6 +24,21 @@
                 }
                 localStorage.setItem('Name', UserName);
             OutputGreting.innerText= `Hello ${UserName}`;
+            Savebutn.style.display="none";
+            InputElement.style.display="none";
+           }
+
+
+           let GetName= localStorage.getItem("Name");
+           if(GetName){
+              OutputGreting.innerText=`Hello ${GetName}`;
+              Savebutn.style.display="none";
+              InputElement.style.display="none";
+           }
+
+           function Logoutbutn(){
+              localStorage.removeItem("Name");
+              window.location.reload();
            }
     </script>
 </body>
